@@ -50,7 +50,7 @@ namespace pruebamails
                         MailMessage email = new MailMessage();
                         email.To.Add(new MailAddress(maildestin));
                         email.From = new MailAddress("spfretirados@gmail.com");
-                        email.Subject = "Cargo 0322 ";
+                        email.Subject = "Cargo 0622 ";
                         email.Body = leyenda + ".\n \n \n \n \n" +
                         "Liquidaciones de Haberes. "  ;
                         email.IsBodyHtml = false;
@@ -73,7 +73,7 @@ namespace pruebamails
                                     if (codigos == "602")
                                     {
 
-                                        //string altas = (abrir.SelectedPath + @"\RTOT0322.txt");
+                                        //string altas = (abrir.SelectedPath + @"\RTOT0622.txt");
                                         ////string baja = (abrir.SelectedPath + @"\BAS00R.DBF");
                                         ////string mod = (abrir.SelectedPath + @"\BAS01R.DBF");
                                         ////string tot = (abrir.SelectedPath + @"\BAS26R.DBF");
@@ -170,7 +170,7 @@ namespace pruebamails
              
                         email.To.Add(new MailAddress(maildestin));
                         email.From = new MailAddress("spf_actividad@hotmail.com");
-                        email.Subject = "Cargo 0322 ";
+                        email.Subject = "Cargo 0622 ";
                         email.Body = leyenda + ".\n \n \n \n \n" +
                         "Liquidaciones de Haberes. ";
                         email.IsBodyHtml = false;
@@ -198,8 +198,8 @@ namespace pruebamails
                                 {
                                     if (codigos == "602")
                                     {
-                                    //    string tot = (abrir.SelectedPath + @"\ATOT0322");
-                                    //    string etot = (abrir.SelectedPath + @"\ETOT0322");
+                                    //    string tot = (abrir.SelectedPath + @"\ATOT0622");
+                                    //    string etot = (abrir.SelectedPath + @"\ETOT0622");
                                     ////    //string baja = (abrir.SelectedPath + @"\BAS00.DBF");
                                     ////    //string mod = (abrir.SelectedPath + @"\Base01.dbf");
                                     ////    //string alta = (abrir.SelectedPath + @"\BASE26.DBF");
@@ -237,8 +237,8 @@ namespace pruebamails
                                 {
                                     if (codigos == "602")
                                     {
-                                    //    string tot = (abrir.SelectedPath + @"\ATOT0322.txt");
-                                    //    string etot = (abrir.SelectedPath + @"\ETOT0322.txt");
+                                    //    string tot = (abrir.SelectedPath + @"\ATOT0622.txt");
+                                    //    string etot = (abrir.SelectedPath + @"\ETOT0622.txt");
                                     ////    //string baja = (abrir.SelectedPath + @"\BASE00.DBF");
                                     ////    //string mod = (abrir.SelectedPath + @"\Base01.dbf");
                                     ////    //string alta = (abrir.SelectedPath + @"\BASE26.DBF");
@@ -276,7 +276,7 @@ namespace pruebamails
                         email.Priority = MailPriority.Normal;
                         string output = null;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.live.com";
+                        smtp.Host = "smtp.outlook.com";
                         smtp.Port = 587;
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
@@ -310,35 +310,7 @@ namespace pruebamails
         }
         private void button2_Click(object sender, System.EventArgs e)
         {
-
-            string maildestin = "nico_xeneise93@hotmail.com";
-
-            System.Net.Mail.SmtpClient mailClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
-            System.Net.Mail.MailMessage MyMailMessage = new System.Net.Mail.MailMessage("spfretirados@gmail.com", maildestin,
-            "Cargo 10/14", "Se envia resultado correspondiente al cargo octubre de 2014.\n\n" +
-            "Liquidaciones de Haberes. ");
-            MyMailMessage.Attachments.Add(new Attachment(abrir.SelectedPath + @"RC00601.TXT"));
-
-            MyMailMessage.IsBodyHtml = false;
-
-            //Proper Authentication Details need to be passed when sending email from gmail
-            System.Net.NetworkCredential mailAuthentication = new System.Net.NetworkCredential("spfretirados@gmail.com", "dgareti1313");
-
-            mailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //mailClient.ServicePoint.Address;
-            mailClient.EnableSsl = true;
-            mailClient.UseDefaultCredentials = false;
-
-            mailClient.Credentials = mailAuthentication;
-            try
-            {
-                mailClient.Send(MyMailMessage);
-                label1.Text = "OK";
-            }
-            catch (Exception exc)
-            {
-                label1.Text = exc.Message;
-            }
+       
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
@@ -384,7 +356,7 @@ namespace pruebamails
                     MailMessage email = new MailMessage();
                     email.To.Add(new MailAddress(maildestin));
                     email.From = new MailAddress("spf_actividad@hotmail.com");
-                    email.Subject = "Cargo 0322 ";
+                    email.Subject = "Cargo 0622 ";
                     email.Body = leyenda + ".\n \n \n \n \n" +
                 "Liquidaciones de Haberes. ";
                     email.IsBodyHtml = false;
@@ -410,8 +382,9 @@ namespace pruebamails
                     string output = null;
                     SmtpClient smtp = new SmtpClient();
                     smtp.Host = "smtp.live.com";
-                    smtp.Port = 587;
+                    smtp.Port = 587;                   
                     smtp.EnableSsl = true;
+                  //  smtp.Timeout = 6000;
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = new NetworkCredential("spf_actividad@hotmail.com", "dgaacti1313");
 
